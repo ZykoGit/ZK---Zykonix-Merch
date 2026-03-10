@@ -76,6 +76,16 @@ body {
     text-align: center;
     box-shadow: 0 0 10px #00ffff55;
     transition: 0.2s;
+    display: block;
+    text-decoration: none;
+    color: cyan;
+}
+
+.item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .item-card:hover {
