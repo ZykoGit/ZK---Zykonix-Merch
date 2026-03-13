@@ -1,206 +1,26 @@
-/* ===== GENERAL ===== */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #020617;
-    color: #d9faff;
-}
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
 
-/* ===== HEADER ===== */
-.zk-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: #030b22;
-    border-bottom: 2px solid cyan;
-}
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    hamburger.textContent = navMenu.classList.contains("open") ? "✕" : "☰";
+});
 
-.zk-logo {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: cyan;
-    text-shadow: 0 0 12px cyan;
-}
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.querySelectorAll(".thumb");
 
-/* ===== NAVIGATION ===== */
-.zk-nav {
-    display: flex;
-    gap: 20px;
-}
+thumbs.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+        mainImage.src = thumb.dataset.img;
 
-.zk-nav a {
-    color: #9beaff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: 0.2s;
-}
+        thumbs.forEach(t => t.classList.remove("active"));
+        thumb.classList.add("active");
+    });
+});
 
-.zk-nav a:hover {
-    color: cyan;
-    text-shadow: 0 0 8px cyan;
-}
-
-/* ===== HAMBURGER ===== */
-.zk-hamburger {
-    display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: cyan;
-    cursor: pointer;
-}
-
-/* ===== PAGE TITLE ===== */
-.page-title {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 2.5rem;
-    color: cyan;
-    text-shadow: 0 0 12px cyan;
-}
-
-/* ===== PRODUCT GRID ===== */
-.item-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 40px 20px;
-}
-
-.item-card {
-    background: #04112e;
-    border: 1px solid cyan;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px #00ffff55;
-    transition: 0.2s;
-    display: block;
-    text-decoration: none;
-    color: cyan;
-}
-
-.item-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px cyan;
-}
-
-.item-img {
-    width: 100%;
-    max-height: 250px; 
-    overflow: hidden;  
-    border: 1px solid cyan;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: #06204a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.item-img img {
-    width: 100%;
-    height: auto;         
-    object-fit: contain;   
-    border-radius: 6px;
-}
-
-
-/* ===== MOBILE ===== */
-@media (max-width: 750px) {
-    .zk-nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #030b22;
-        width: 200px;
-        padding: 20px;
-        border-left: 2px solid cyan;
-        border-bottom: 2px solid cyan;
-    }
-
-    .zk-nav.open {
-        display: flex;
-    }
-
-    .zk-hamburger {
-        display: block;
-    }
-}
-
-.product-page {
-    display: flex;
-    gap: 40px;
-    padding: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* MAIN IMAGE */
-.product-gallery {
-    max-width: 450px;
-    width: 100%;
-}
-
-#mainImage {
-    width: 100%;
-    border: 2px solid cyan;
-    border-radius: 10px;
-    box-shadow: 0 0 12px cyan;
-}
-
-/* THUMBNAILS */
-.thumbnail-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-    justify-content: center;
-}
-
-.thumb {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border: 2px solid cyan;
-    border-radius: 6px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.2s;
-}
-
-.thumb:hover,
-.thumb.active {
-    opacity: 1;
-    box-shadow: 0 0 10px cyan;
-}
-
-/* PRODUCT INFO */
-.product-info {
-    max-width: 400px;
-}
-
-.price {
-    font-size: 1.8rem;
-    color: cyan;
-    text-shadow: 0 0 10px cyan;
-}
-
-.buy-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 20px;
-    background: cyan;
-    color: #020617;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.buy-button:hover {
-    background: #00ffff;
-    box-shadow: 0 0 12px cyan;
-}
+// Auto-scroll every 15 seconds
+let index = 0;
+setInterval(() => {
+    index = (index + 1) % thumbs.length;
+    thumbs[index].click();
+}, 15000);
