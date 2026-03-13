@@ -70,6 +70,61 @@ body {
     padding: 0 20px;
     line-height: 1.6;
 }
+/* ===== FEATURED SECTION ===== */
+.zk-featured {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.zk-featured h2 {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ===== CARD ===== */
+.zk-card {
+    display: block;
+    background: #04112e;
+    border: 1px solid cyan;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #d9faff;
+    box-shadow: 0 0 10px #00ffff55;
+    transition: 0.2s;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.zk-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
+}
+
+/* ===== CARD IMAGE ===== */
+.zk-card-img {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    border: 1px solid cyan;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #06204a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zk-card-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 750px) {
