@@ -126,6 +126,65 @@ body {
     border-radius: 6px;
 }
 
+/* ===== CONTACT FORM ===== */
+.contact-section {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background: #04112e;
+    border: 1px solid cyan;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 12px #00ffff55;
+}
+
+.contact-card h3 {
+    text-align: center;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    margin-bottom: 20px;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    background: #06204a;
+    border: 1px solid cyan;
+    border-radius: 8px;
+    padding: 12px;
+    color: #d9faff;
+    font-size: 1rem;
+}
+
+.contact-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-card button {
+    background: cyan;
+    color: #020617;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.contact-card button:hover {
+    background: #00e0e0;
+    box-shadow: 0 0 10px cyan;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 750px) {
     .zk-nav {
